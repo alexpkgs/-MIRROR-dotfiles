@@ -17,7 +17,7 @@
   # Include configurations from modules
   imports = [
   ./modules/flameshot.nix
-  ./modules/qutebrowser/browser.nix
+  ./modules/alacritty.nix
   ./modules/dunst.nix
   ./modules/rofi/rofi.nix
   ./packages.nix
