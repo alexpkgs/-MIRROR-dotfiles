@@ -1,3 +1,5 @@
 eval (starship init elvish)
 
-alias time = tty-clock -t -c -s
+fn time {
+    alias time = tty-clock -t -c -s
+}
