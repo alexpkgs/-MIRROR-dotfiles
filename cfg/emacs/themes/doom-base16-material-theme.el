@@ -1,15 +1,4 @@
-;;; doom-cafe-theme.el --- A nice light theme -*- lexical-binding: t; no-byte-compile: t; -*-
-;;
-;; Author: nuxsh
-;; Created: January 2022
-;; Version: 0.1
-;; Keywords: custom themes, faces
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
-;;; Commentary:
-;;
-;; theme.
-;;
-;;; Code:
+
 (require 'doom-themes)
 
 (defgroup doom-cafe-theme nil
