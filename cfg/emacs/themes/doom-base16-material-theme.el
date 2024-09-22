@@ -1,12 +1,9 @@
-
 (require 'doom-themes)
 
 (defgroup doom-cafe-theme nil
   "Options for the `doom-cafe' theme."
   :group 'doom-themes)
 
-(def-doom-theme doom-cafe
-  "I made this theme."
 
   ;; name        default   256       16
   ((bg         '("#F0EDEC" "#F0EDEC" "white"))
