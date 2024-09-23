@@ -20,8 +20,8 @@ end
 
 -- Create a text widget for the time
 local function create_time_widget()
-    local time_widget = wibox.widget.textclock("%I:%M %p")  -- 12-hour format
-    time_widget.font = "Sans 12"  -- Change font size as needed
+    local time_widget = wibox.widget.textclock("%I:%M")  -- 12-hour format
+    time_widget.font = "Cartograph 10"  -- Change font size as needed
     return time_widget
 end
 
@@ -31,7 +31,7 @@ local function create_bar(s)
     local mywibox = awful.wibar({
         position = "bottom",
         screen = s,
-        width = 500,
+        width = 700,
         bg = beautiful.bg_normal,
         ontop = true,  -- Keep the bar above other windows
         floating = true,  -- Set the bar to be floating
