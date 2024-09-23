@@ -65,7 +65,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a custom bar
 local create_bar = require("bar")
 
--- Create a function to set the wallpaper
+-- Function to set the wallpaper
 local function set_wallpaper(s)
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper
@@ -76,10 +76,15 @@ local function set_wallpaper(s)
     end
 end
 
+-- Connect to screens and set up workspaces and bar
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
-    awful.tag({ "1", "2", "3", "4", "5" }, s)
-    create_bar(s)
+
+    -- Define tags (workspaces)
+    local tags = { "1", "2", "3", "4", "5" }
+    awful.tag(tags, s)
+
+    create_bar(s)  -- Create the bar after defining tags
 
     -- Right-click to show the menu
     root.buttons(gears.table.join(
@@ -126,7 +131,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+              {description = "quit awesome"}),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
