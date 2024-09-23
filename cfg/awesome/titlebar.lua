@@ -37,7 +37,7 @@ local function create_titlebar(c)
     exit_button:buttons(gears.table.join(
         awful.button({}, 1, function() c:kill() end)  -- Close the application
     ))
-    
+
     right_layout:add(exit_button)
 
     -- Set titlebar colors
@@ -55,4 +55,3 @@ local function create_titlebar(c)
 end
 
 return create_titlebar
-
