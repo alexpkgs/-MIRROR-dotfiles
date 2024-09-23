@@ -10,7 +10,7 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #F0EDEC;
+  bg: #eaecf2;
   fg: #343b58;
   subtle: #d4d6db;
 
