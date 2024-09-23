@@ -7,7 +7,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Cartograph 10"
+theme.font          = "Cartograph CF 10"
 
 backgroundColor = '#eaecf2'
 foregroundColor = '#685c56'
