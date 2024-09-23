@@ -9,7 +9,7 @@ local theme = {}
 
 theme.font          = "Cartograph 10"
 
-backgroundColor = '#F0EDEC'
+backgroundColor = '#eaecf2'
 foregroundColor = '#685c56'
 highlightColor = '#1f1104'
 
