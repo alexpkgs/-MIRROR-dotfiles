@@ -21,9 +21,7 @@ Here are some details about my setup
 
 ## Gallery
 
-![demo1](./assets/demo1.gif)
-![demo2](./assets/demo2.gif)
-![workspace](./assets/workspace.jpg)
+![Rice](./ss/2024-09-23_21-53.png)
 
 ## Rices
 
