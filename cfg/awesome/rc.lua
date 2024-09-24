@@ -14,6 +14,9 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
+-- Custom notification module
+local nofi = require("nofi")  -- Ensure the path is correct
+
 -- Error handling
 if awesome.startup_errors then
     naughty.notify({
@@ -45,20 +48,17 @@ terminal = "wezterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
-require("nofi")
+
 -- Menu configuration
 local myawesomemenu = {
-    { "hotkeys", function() awful.hotkeys.show_help(nil, awful.screen.focused()) end },
-    { "manual", terminal .. " -e man awesome" },
-    { "edit config", editor_cmd .. " " .. awesome.conffile },
-    { "restart", awesome.restart },
+    { "rest", awesome.restart },
     { "quit", function() awesome.quit() end },
 }
 
 local mymainmenu = awful.menu({
     items = {
-        { "awesome", myawesomemenu, beautiful.awesome_icon },
-        { "open terminal", terminal },
+        { "awe", myawesomemenu, beautiful.awesome_icon },
+        { "wez", terminal },
     }
 })
 
@@ -90,7 +90,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Right-click to show the menu
     root.buttons(gears.table.join(
-        awful.button({}, 3, function() mymainenu:show() end) -- Right-click
+        awful.button({}, 3, function() mymainmenu:show() end) -- Right-click
     ))
 end)
 
@@ -239,4 +239,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-awesome.emit_signal("custom::notification", "Welcome", "AwesomeWM has started successfully!")
+-- Show startup notification
+nofi.show("luarocks")
