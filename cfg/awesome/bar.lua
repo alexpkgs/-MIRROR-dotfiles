@@ -3,7 +3,7 @@ local wibox = require("wibox")
 local gears = require("gears")
 local beautiful = require("beautiful")
 
--- Create an AwesomeWM logo button
+
 local function create_logo_button()
     local logo = wibox.widget {
         image = gears.filesystem.get_configuration_dir() .. "icons/awesome.png",
@@ -20,7 +20,7 @@ end
 
 -- Create a text widget for the time
 local function create_time_widget()
-    local time_widget = wibox.widget.textclock("%I:%M")  -- 12-hour format
+    local time_widget = wibox.widget.textclock("%I:%M" )  -- 12-hour format
     time_widget.font = "Cartograph 10"
     return time_widget
 end
@@ -47,7 +47,7 @@ local function create_bar(s)
     local mywibox = awful.wibar({
         position = "bottom",
         screen = s,
-        width = 700,
+        width = 800,
         bg = beautiful.bg_normal,
         ontop = true,
         floating = true,
