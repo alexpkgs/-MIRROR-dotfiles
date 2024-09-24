@@ -9,3 +9,5 @@
 
 (use-package evil :ensure t :init
   (evil-mode +1))
+
+  (load "~/.config/emacs/syntax.el")
