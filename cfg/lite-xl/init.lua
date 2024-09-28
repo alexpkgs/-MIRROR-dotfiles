@@ -22,3 +22,11 @@ style.big_font = renderer.font.load(DATADIR .. "/fonts/JetBrainsMono-Regular.ttf
 
 config.plugins.toolbarview = false
 config.plugins.contextmenu = false
+require("plugins.nix")
+require("plugins.go")
+require("plugins.ts")
+require("plugins.search")
+require("plugins.spellcheck")
+require("plugins.sass")
+require("plugins.ini")
+require("plugins.jsx")
