@@ -1,7 +1,7 @@
 ## <a>awful dotfiles..</a>
 
 ### Progress....
-<img src=./ss/hate-it.png>
+<img src=./ss/2024-09-27_23-11.png>
 
 (currently under reconstruction)
 
