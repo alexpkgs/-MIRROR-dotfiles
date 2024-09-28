@@ -86,7 +86,7 @@
     elvish
     wezterm
     awesome
-    neovim
+    lite-xl
   ];
 
   # awesome
