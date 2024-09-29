@@ -17,70 +17,74 @@ local function create_logo_button()
     return logo
 end
 
--- Create a text widget for the title
-local function create_title_widget()
-    local title_widget = wibox.widget.textbox()
-    title_widget.font = "uzura_font"
-    
-    -- Update the title widget when the focus changes
-    client.connect_signal("focus", function(c)
-        title_widget.text = c.name or "Untitled"
-    end)
-
-    -- Clear the title when unfocused
-    client.connect_signal("unfocus", function()
-        title_widget.text = ""
-    end)
-
-    return title_widget
-end
-
--- Create a text widget for the time
+-- why time
 local function create_time_widget()
-    local time_widget = wibox.widget.textclock("%I:%M")  -- 12-hour format
-    time_widget.font = "uzura_font"
+    local time_widget = wibox.widget.textclock("%I:%M EST")  -- 12-hour format
+    time_widget.font = "Cartograph CF 10"
     return time_widget
 end
 
--- Create the wibox (bar)
+-- stop using wibox you stupid head
 local function create_bar(s)
     local mywibox = awful.wibar({
-        position = "bottom",
+        position = "left",
         screen = s,
-        width = 1000,
+        width = 120,
         height = 30,
         bg = beautiful.bg_normal,
-        ontop = true,
+        ontop = false,  -- Set to false so it can be covered by other windows
         floating = true,
+        shape = function(cr, width, height)
+            gears.shape.rounded_rect(cr, width, height, 0)  -- Adjust the radius here
+        end,
     })
 
     local layout = wibox.layout.align.horizontal()
 
-    -- Add the logo to the left
+    -- Add a spacer to the left
+    local spacer = wibox.widget {
+        forced_width = 15,  -- Adjust this value for more or less space
+        widget = wibox.widget.textbox
+    }
+
+    -- Create the logo button
     local logo = create_logo_button()
     local left_layout = wibox.layout.fixed.horizontal()
+    left_layout:add(spacer)  -- Add spacer to the left layout
     left_layout:add(logo)
-
-    -- Create the title widget for the center
-    local title_widget = create_title_widget()
-    local center_layout = wibox.layout.flex.horizontal()
-    center_layout:add(title_widget)
 
     -- Create the time widget for the right
     local time_widget = create_time_widget()
 
     -- Set the layouts
     layout:set_left(left_layout)
-    layout:set_middle(center_layout)  -- Center the title widget
-    layout:set_right(time_widget)      -- Time widget on the right
+    layout:set_right(time_widget)  -- Time widget on the right
 
     -- Set the layout for the wibox
     mywibox:set_widget(layout)
 
     -- Position the wibox manually to the bottom with a slight offset
-    local offset = 10
+    local offset = 15
     mywibox:geometry({ y = s.geometry.height - mywibox.height - offset })
+
+    -- Hide the wibox when a client overlaps
+    client.connect_signal("property::floating", function(c)
+        if c.floating then
+            mywibox.visible = false
+        else
+            mywibox.visible = true
+        end
+    end)
+
+    -- Optionally, hide the wibox when focused on a fullscreen client
+    client.connect_signal("property::fullscreen", function(c)
+        if c.fullscreen then
+            mywibox.visible = false
+        else
+            mywibox.visible = true
+        end
+    end)
 end
 
+-- Return the create_bar function
 return create_bar
-
