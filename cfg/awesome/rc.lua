@@ -43,22 +43,27 @@ end
 
 -- Variable definitions
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
-
+browser = "firefox"
 terminal = "wezterm"
-editor = os.getenv("EDITOR") or "vim"
+files = "wezterm -e fff"
+txt = "lite-xl"
+editor = os.getenv("EDITOR") or "lite-xl"
 editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- Menu configuration
 local myawesomemenu = {
-    { "rest", awesome.restart },
+    { "restart", awesome.restart },
     { "quit", function() awesome.quit() end },
+    
 }
 
 local mymainmenu = awful.menu({
     items = {
-        { "awe", myawesomemenu, beautiful.awesome_icon },
-        { "wez", terminal },
+        { "Awesome", myawesomemenu, beautiful.awesome_icon },
+        { "Terminal", terminal },
+        { "Text Editor", txt},
+        { "Files", files },
     }
 })
 
@@ -83,7 +88,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Define tags (workspaces)
-    local tags = { "1", "2", "3", "4", "5" }
+    local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
     awful.tag(tags, s)
 
     create_bar(s)  -- Create the bar after defining tags
@@ -235,9 +240,6 @@ client.connect_signal("property::fullscreen", function(c)
     end
 end)
 
--- Handle focus and unfocus events
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Show startup notification
 nofi.show("please stop ricing")
