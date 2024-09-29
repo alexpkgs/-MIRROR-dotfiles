@@ -7,18 +7,18 @@ local naughty = require("naughty")
 local nofi = {}
 
 naughty.config.defaults.ontop = true
-naughty.config.defaults.position = "top_left"  -- Changed to top_left
+naughty.config.defaults.position = "top_left" 
 naughty.config.defaults.icon_size = 0
 naughty.config.defaults.screen = awful.screen.focused()
 naughty.config.defaults.timeout = 5.5
-naughty.config.defaults.title = "You Got Mailed"
+naughty.config.defaults.title = "Mail"
 naughty.config.defaults.margin = 20
 naughty.config.defaults.border_width = 2
 naughty.config.defaults.border_color = "#eaecf2"
 naughty.config.defaults.font = "Cartograph CF 9"
 naughty.config.defaults.width = 300
 
--- Function to show notifications
+
 function nofi.show(title, text, icon)
     local close_button = wibox.widget {
         text = "Close",
@@ -33,7 +33,6 @@ function nofi.show(title, text, icon)
     progressbar:set_max_value(naughty.config.defaults.timeout)
     progressbar:set_value(naughty.config.defaults.timeout)
 
-    -- Create the notification
     local notification = naughty.notify({
         title = title or naughty.config.defaults.title,
         text = text or "",
@@ -44,7 +43,7 @@ function nofi.show(title, text, icon)
         border_width = naughty.config.defaults.border_width,
         font = naughty.config.defaults.font,
         width = naughty.config.defaults.width,
-        position = "top_left",  -- Set position to top_left
+        position = "top_left",  
         margin = naughty.config.defaults.margin,
         widget = wibox.widget {
             {
@@ -72,20 +71,19 @@ function nofi.show(title, text, icon)
         },
     })
 
-    -- Manually position the notification in the top left and make it float
+
     gears.timer.start_new(0.1, function()
         if notification then
             local screen_geom = awful.screen.focused().geometry
-            local margin = 20  -- Adjust this value for more space
+            local margin = 20 
 
             notification:geometry({
-                x = screen_geom.x + margin,  -- Offset from the left
-                y = screen_geom.y + margin,  -- Offset from the top
+                x = screen_geom.x + margin,  
+                y = screen_geom.y + margin, 
             })
         end
     end)
 
-    -- Update the progress bar over the timeout duration
     local total_time = naughty.config.defaults.timeout
     local update_interval = 0.1
     local elapsed = 0
@@ -96,13 +94,13 @@ function nofi.show(title, text, icon)
 
         if elapsed >= total_time then
             naughty.destroy(notification)
-            return false  -- Stop the timer
+            return false  
         end
 
-        return true  -- Continue the timer
+        return true  
     end)
 
-    -- Connect the close button signal
+    
     button_container:buttons(gears.table.join(
         awful.button({}, 1, function()
             naughty.destroy(notification)
