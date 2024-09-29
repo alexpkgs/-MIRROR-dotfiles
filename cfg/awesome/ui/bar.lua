@@ -68,7 +68,7 @@ local function create_bar(s)
 
 
     layout:set_left(left_layout)
-    layout:set_right(time_widget)  -
+    layout:set_right(time_widget)  
 
     -- layout of wibar
     mywibox:set_widget(layout)
