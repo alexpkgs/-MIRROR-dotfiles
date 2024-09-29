@@ -4,16 +4,16 @@ local gears = require("gears")
 
 -- Define titlebar colors
 local titlebar_colors = {
-    background = "#ffffff",  -- Titlebar background color (white)
+    background = "#000000",  -- Titlebar background color (white)
     foreground = "#000000",  -- Titlebar text color (black)
 }
 
 local function create_titlebar(c)
     -- Create the titlebar
-    local titlebar = awful.titlebar(c, { size = 30, position = "top" })
+    local titlebar = awful.titlebar(c, { size = 30, position = "right" })
 
-    -- Exit button using the heart icon
-    local exit_button = wibox.widget.imagebox("~/.config/awesome/icons/heart.png")  -- Path to your heart icon
+    -- Exit button using the "X" icon
+    local exit_button = wibox.widget.imagebox(gears.filesystem.get_configuration_dir() .. "icons/close.png")  -- Path to your "X" icon
     exit_button:buttons(gears.table.join(
         awful.button({}, 1, function() c:kill() end)  -- Close the application
     ))
