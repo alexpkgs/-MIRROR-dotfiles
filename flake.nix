@@ -1,5 +1,5 @@
 {
-  description = "Optimized Nix flake with no packages or dev shell";
+  description = "idk";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
