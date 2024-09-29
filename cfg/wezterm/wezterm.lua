@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local config = {
     font = wezterm.font_with_fallback({
-        { family = "Cartograph CF", weight = "Regular", stretch = "Normal", style = "Normal" },
+        { family = "Cartograph CF", weight },
     }),
     font_size = 10,
     color_scheme = "custom_scheme",
@@ -12,21 +12,21 @@ local config = {
         right = 40,
         top = 40,
         bottom = 40,
-    }
+    },
 }
 
 config.color_schemes = {
     ["custom_scheme"] = {
-        foreground = "#685c56",
-        background = "#eaecf2",
+        foreground = "#F0EDEC",  -- updated fg
+        background = "#282424",   -- updated bg
         cursor_bg = "#685c56",
-        cursor_border = "#685c56",  -- Use the same as cursor_bg
+        cursor_border = "#685c56",
         cursor_fg = "#F0EDEC",
-        selection_bg = "#a8623e",  -- Use a color from your theme
-        selection_fg = "#F0EDEC",
+        selection_bg = "#3B8992",  -- bright cyan
+        selection_fg = "#685c56",   -- updated fg
         ansi = {
             "#F0EDEC",  -- black
-            "#a8334c",  -- red
+            "#cd6059",  -- red
             "#597a37",  -- green
             "#a8623e",  -- yellow
             "#286486",  -- blue
@@ -35,17 +35,16 @@ config.color_schemes = {
             "#ddd3d2",  -- white
         },
         brights = {
-            "#e9e4e2",  -- bright black
+            "#d2c6c5",  -- bright white
             "#ff5555",  -- bright red
             "#35a69c",  -- bright green
             "#a8623e",  -- bright yellow
             "#cbd9e3",  -- bright blue
             "#8850b4",  -- bright magenta
+            "#948985",  -- bright black
             "#2a646b",  -- bright cyan
-            "#948985",  -- bright white
         },
     },
 }
 
 return config
-
