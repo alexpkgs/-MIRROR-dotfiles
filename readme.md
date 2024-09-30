@@ -1,10 +1,10 @@
 <div style="text-align: center;">
     <img src="./.gay.img/awful.png" alt="awful WHERE THE IMG?">
 </div>
-<div style="text-align" center;>
+
 ![Cool](https://img.shields.io/badge/WM-Awesome-da696f?style=for-the-badge&labelColor=1B1919)
-![Bloat](https://img.shields.io/badge/Bloated-Yes-c585cf?style=for-the-badge&labelColor=1B1919)
-</div>
+![Bloat](https://img.shields.io/badge/OS-NixOS-c585cf?style=for-the-badge&labelColor=1B1919)
+
 
 ## Setup
 
