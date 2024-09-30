@@ -14,7 +14,8 @@
 
 ## Old Flashbang Setup (it sucks)
 <div style="text-align: center;">
-  <img src="./.gay.img/setup-old.ong>
+    <img src="./.gay.img/setup-old.png" alt="god i hate it">
+</div>
 
 > [!CAUTION]
 > [I don't take responsability for what you do with these files, nor are they guaranteed to work on your machine.](https://git.gay/alexpkgs/dotfiles/src/branch/main/LICENSE)
