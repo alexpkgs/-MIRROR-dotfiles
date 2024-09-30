@@ -11,4 +11,4 @@
 
 
 > [!CAUTION]
-> I don't take responsability for what you do with these files, nor are they guaranteed to work on your machine.
+> [I don't take responsability for what you do with these files, nor are they guaranteed to work on your machine.](https://git.gay/alexpkgs/dotfiles/src/branch/main/LICENSE)
