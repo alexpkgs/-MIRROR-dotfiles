@@ -6,13 +6,15 @@
 ![osing](https://img.shields.io/badge/OS-NixOS-c585cf?style=for-the-badge&labelColor=1B1919)
 
 
-## Setup
+## Setup (New)
 
 <div style="text-align: center;">
     <img src="./.gay.img/setup.png" alt="WHERE THE IMG?">
 </div>
 
-------------------------------------------
+## Old Flashbang Setup (it sucks)
+<div style="text-align: center;">
+  <img src="./.gay.img/setup-old.png alt="I SWEAR THIS SETUP WILL ALWAYS SUCK LIKE ALWAYS">
 
 > [!CAUTION]
 > [I don't take responsability for what you do with these files, nor are they guaranteed to work on your machine.](https://git.gay/alexpkgs/dotfiles/src/branch/main/LICENSE)
