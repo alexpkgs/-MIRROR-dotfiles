@@ -3,8 +3,10 @@
 </div>
 
 ![Cool](https://img.shields.io/badge/WM-Awesome-da696f?style=for-the-badge&labelColor=1B1919)
-![osing](https://img.shields.io/badge/OS-NixOS-c585cf?style=for-the-badge&labelColor=1B1919)
-
+![osing](https://img.shields.io/badge/OS-NixOS-da696f?style=for-the-badge&labelColor=1B1919)
+![BAR](https://img.shields.io/badge/Bar-Wibar-da696f?style=for-the-badge&labelColor=1B1919)
+![ROFI](https://img.shields.io/badge/Laun-Rofi-da696f?style=for-the-badge&labelColor=1B1919)
+![TXT](https://img.shields.io/badge/TXT-LiteXL-da696f?style=for-the-badge&labelColor=1B1919)
 
 ## Setup (New)
 
